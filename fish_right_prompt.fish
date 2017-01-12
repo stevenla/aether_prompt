@@ -1,6 +1,6 @@
 function fish_right_prompt
     set -l status_copy $status
-    set -l status_color black
+    set -l status_color cyan
 
     if test "$status_copy" -ne 0
         set status_color red
@@ -15,6 +15,6 @@ function fish_right_prompt
     else if set -l last_job_id (last_job_id -l)
          echo -sn (set_color $status_color) "%$last_job_id" (set_color normal)
     else
-         echo -sn (set_color cyan) (date "+%H:%M") (set_color normal)
+         echo -sn (set_color black) (date "+%H:%M") (set_color normal)
     end
 end
