@@ -15,6 +15,7 @@ end
 
 function fish_prompt -d "sla's fish prompt"
     echo -e ""
+    set -l gray 555
 
     # User
     #
@@ -27,7 +28,7 @@ function fish_prompt -d "sla's fish prompt"
     set -l host_name (hostname -s)
     set -l host_glyph "@"
 
-    __print_color white "$host_glyph"
+    __print_color "$gray" "$host_glyph"
     __print_color blue "$host_name"
 
 
@@ -36,7 +37,7 @@ function fish_prompt -d "sla's fish prompt"
     set -l pwd_glyph ":"
     set -l pwd_string (echo $PWD | sed 's|^'$HOME'\(.*\)$|~\1|')
 
-    __print_color white "$pwd_glyph"
+    __print_color "$gray" "$pwd_glyph"
     __print_color green "$pwd_string"
 
 
@@ -79,5 +80,5 @@ function fish_prompt -d "sla's fish prompt"
         __print_color yellow "$git_glyph_suffix"
     end
 
-    __print_color white "\n › "
+    __print_color "$gray" "\n› "
 end
