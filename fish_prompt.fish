@@ -60,7 +60,7 @@ function fish_prompt -d "sla's fish prompt"
                     set git_branch_glyph "+"
                 end
             else
-                set git_branch_glyph "?"
+                set git_branch_glyph "•"
             end
         end
 
